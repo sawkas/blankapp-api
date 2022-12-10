@@ -13,15 +13,17 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
+gem 'rack-cors', :require => 'rack/cors'
 
 gem "dotenv-rails"
 gem "rubocop"
 
 # Auth
 gem "devise"
+gem 'devise_token_auth'
 gem "omniauth"
 gem "omniauth-google-oauth2"
-gem "omniauth-rails_csrf_protection"
+# gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "pry"
