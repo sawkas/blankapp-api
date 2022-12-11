@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
+  scope :api do
+    # scope to do not change devise method names
+    mount_devise_token_auth_for 'User', at: 'auth'
+  end
 
-  # devise_for :users, controllers: {
-  #   omniauth_callbacks: 'users/omniauth_callbacks',
-  #   sessions: 'users/sessions',
-  #   registrations: 'users/registrations'
-  # }
+  namespace :api do
+    resources :me, only: [:index]
+  end
 
-  get 'home', to: "home#index"
+  get 'ping', to: 'ping#ping'
 
-  root to: "home#index"
+  root to: 'home#index'
 end

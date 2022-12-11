@@ -15,6 +15,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'blueprinter' # JSON Object Presenter
+
 gem "dotenv-rails"
 gem "rubocop"
 
