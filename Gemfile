@@ -22,10 +22,9 @@ gem "rubocop"
 
 # Auth
 gem "devise"
-gem 'devise_token_auth'
 gem "omniauth"
+gem 'devise_token_auth'
 gem "omniauth-google-oauth2"
-# gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "pry"
