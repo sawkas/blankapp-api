@@ -1,35 +1,33 @@
-source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+ruby '3.0.1'
 
-ruby "3.0.1"
-gem "rails", "~> 7.0.4"
-gem "sprockets-rails"
-gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
-gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
-gem "jbuilder"
-gem "redis", "~> 4.0"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "bootsnap", require: false
-gem 'rack-cors', :require => 'rack/cors'
+source 'https://rubygems.org'
 
-gem 'blueprinter' # JSON Object Presenter
+gem 'bootsnap', require: false
+gem 'importmap-rails'
+gem 'jbuilder'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
+gem 'rack-cors', require: 'rack/cors'
+gem 'rails', '~> 7.0.4'
+gem 'redis', '~> 4.0'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "dotenv-rails"
-gem "rubocop"
+gem 'blueprinter'
+gem 'dotenv-rails'
+gem 'rubocop'
 
 # Auth
-gem "devise"
-gem "omniauth"
+gem 'devise'
 gem 'devise_token_auth'
-gem "omniauth-google-oauth2"
+gem 'google-id-token'
 
 group :development, :test do
-  gem "pry"
+  gem 'pry'
 end
 
 group :development do
-  gem "web-console"
+  gem 'web-console'
 end

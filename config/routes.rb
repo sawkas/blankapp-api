@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    post 'auth/google', to: 'google_sign_in#auth'
+
     resources :me, only: [:index]
   end
 
