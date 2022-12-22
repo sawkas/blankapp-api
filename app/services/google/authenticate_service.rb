@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Google
   class AuthenticateService
     GOOGLE_CLIENT_ID = ENV['GOOGLE_OAUTH_CLIENT_ID']

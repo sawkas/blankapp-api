@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,9 +24,9 @@ module Scamapp
       allow do
         origins '*'
         resource '*',
-          headers: :any,
-          expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-          methods: [:get, :post, :delete, :put, :patch, :options, :head]
+                 headers: :any,
+                 expose: %w[access-token expiry token-type uid client],
+                 methods: %i[get post delete put patch options head]
       end
     end
   end
