@@ -25,7 +25,7 @@ module Users
         user.email = payload[:email]
         user.full_name = payload[:name]
         user.avatar_url = payload[:picture]
-        user.password = Devise.friendly_token[0, 20]
+        user.password = SecureRandom.hex((8..20).to_a.sample)
       end
     end
 

@@ -1,23 +1,15 @@
 # frozen_string_literal: true
 
-class GoogleSignInController < DeviseTokenAuth::SessionsController
+class GoogleSignInController < ApplicationController
   def auth
-    @resource = Users::ProviderAuthenticateService.new(:google, params[:id_token]).call
+    user = Users::ProviderAuthenticateService.new(:google, params[:id_token]).call
 
-    if @resource
-      create_and_assign_token
+    if user
+      token = Knock::AuthToken.new(payload: { sub: user.id }).token
 
-      sign_in(:user, @resource, store: false, bypass: false)
-
-      render_create_success
+      render json: { token: token, user_id: user.id }
     else
-      render_create_error_bad_credentials
+      render :unauthorized
     end
-  end
-
-  private
-
-  def devise_mapping
-    :user
   end
 end

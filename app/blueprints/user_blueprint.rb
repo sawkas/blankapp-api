@@ -3,5 +3,5 @@
 class UserBlueprint < BaseBlueprint
   identifier :id
 
-  fields :full_name, :email
+  fields :full_name, :email, :avatar_url
 end

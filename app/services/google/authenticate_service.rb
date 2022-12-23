@@ -8,8 +8,6 @@ module Google
 
     def get_payload
       @payload ||= JWT.decode(id_token, nil, false)[0]&.with_indifferent_access
-    rescue GoogleIDToken::ValidationError => e
-      false
     end
 
     private
