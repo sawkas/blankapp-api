@@ -16,7 +16,7 @@ gem 'rubocop'
 # Auth
 gem 'devise'
 gem 'devise_token_auth'
-gem 'google-id-token'
+gem 'jwt'
 
 group :development, :test do
   gem 'pry'
