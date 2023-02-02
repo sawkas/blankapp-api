@@ -7,7 +7,7 @@ class GoogleSignInController < ApplicationController
     if user
       token = Knock::AuthToken.new(payload: { sub: user.id }).token
 
-      render json: { token: token, user_id: user.id }
+      render json: { token: token, user: UserBlueprint.render_as_hash(user) }
     else
       render :unauthorized
     end
